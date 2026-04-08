@@ -1,0 +1,28 @@
+CLASS e_waste_sys
+	METHOD menu_controls(choice)
+		DISPLAY item controls
+		PROMPT user input for e waste menu
+	ENDMETHOD 
+	
+	METHOD list_update
+		DISPLAY e_waste_items as list
+	ENDMETHOD	
+	
+	METHOD list_sort
+		CALL pandas for SORT e_waste_items by number, name, type, date
+	ENDMETHOD	
+	
+	METHOD add_item(name, type, date)
+		RETURN name, type, date
+	ENDMETHOD
+	
+	METHOD item_stats
+		CALL pandas for e_waste_items stats
+	ENDMETHOD 
+
+ENDCLASS
+
+CLASS e_waste_menu(e_waste_sys)
+	FUNCTION menu_controls(choice)
+		DISPLAY specific e_waste_menu choices
+ENDCLASS

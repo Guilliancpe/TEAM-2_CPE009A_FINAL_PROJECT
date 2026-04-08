@@ -1,0 +1,12 @@
+CLASS user_accounts
+	SET PRIVATE user_name
+	SET PRIVATE user_pass
+	
+	FUNCTION get_user_name
+		RETURN user_name
+	ENDFUNCTION
+	FUNCTION get_user_pass
+		RETURN user_pass
+	ENDFUNCTION	
+ENDCLASS
+

@@ -1,0 +1,36 @@
+CLASS login_system
+
+	FUNCTION login_menu		
+		DISPLAY "Loading Login Menu"
+		
+		DISPLAY "Enter Username: "
+		PROMPT user input for user_name
+		
+		IF user_name == user_name_db
+			CONTINUE 
+		
+		DISPLAY "Enter User Password: "
+		PROMPT user input for user_password
+		
+		IF user_password == user_pass_db
+			CALL e_waste_menu
+		ENDIF
+		
+	ENDFUNCTION
+
+	FUNCTION login_register
+		DISPLAY "Enter New Username:"
+		PROMPT user input for user_new_name
+		
+		DISPLAY "Enter New Password:"
+		PROMPT user input for user_new_pass
+		
+		DISPLAY "Account creation success"
+	
+	ENDFUNCTION
+	
+	FUNCTION main_menu_exit
+		break
+	ENDFUNCTION
+
+ENDCLASS

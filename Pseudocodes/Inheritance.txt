@@ -1,0 +1,26 @@
+CLASS main_menu_display INHERIT login_system
+	
+	DISPLAY "Welcome to the E-Waste Management and Tracking System!"
+	
+	FUNCTION main_menu_select
+		SET menu_choice
+		DISPLAY "What would you like to do?"
+		DISPLAY "(1) Login"
+		DISPLAY "(2) Register"
+		DISPLAY "(3) Exit"
+		PROMPT user input for menu_choice
+		
+		IF choice == 1
+			CALL login_menu
+		ELIF choice == 2
+			CALL login_register
+		ELIF choice == 3
+			CALL main_menu_exit
+		ELSE
+			DISPLAY "Invalid Choice"
+			WAIT for 2 seconds
+		ENDIF
+	ENDFUNCTION
+		
+ENDCLASS
+
