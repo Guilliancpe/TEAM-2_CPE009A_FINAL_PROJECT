@@ -15,7 +15,7 @@ class login(CSV):
           
             for row in read:
                 if row[0] == login_user and row[1] == login_pass:
-                    print("Login succesful!")
+                    print("\nLogin succesful!\n")
                     return
                 
           
