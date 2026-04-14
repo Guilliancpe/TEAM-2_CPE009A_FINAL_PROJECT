@@ -10,14 +10,17 @@ admin_obj.newfile("Admin", "TIPadmin2026", "123456")
 
 choice = 0
 
+print("|-----------------------------------------------------|")
+print("| Welcome to the E-waste Management & Tracking System |")
+print("|-----------------------------------------------------|")
+
 while choice != 4:
-    print("====== Main Menu ======")
-    print(" 1. New account \n 2. Login \n 3. Admin \n 4. Exit")
+    print("====== Main Menu ======\n 1. New account \n 2. Login \n 3. Admin \n 4. Exit")
     
     try:
         choice = int(input("\nChoice: "))
     except ValueError:
-        print("Please enter a valid number.")
+        print("Please enter a valid number.\n")
         continue
 
     if choice == 1:
@@ -28,3 +31,6 @@ while choice != 4:
         admin_obj.admin_login()
     elif choice == 4:
         print("Goodbye!")
+    else:
+        print("Please enter a valid choice\n")
+        continue
