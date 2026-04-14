@@ -5,7 +5,7 @@ class Admin_menu():
     def show_menu(self):
       choice = 0
       
-      while choice != 6:
+      while choice != 4:
           print("\n=====Admin Menu=====\n")
           print("1. Archive/delete Item")
           print("2. E-waste Statistics")
