@@ -15,12 +15,12 @@ print("| Welcome to the E-waste Management & Tracking System |")
 print("|-----------------------------------------------------|")
 
 while choice != 4:
-    print("====== Main Menu ======\n 1. New account \n 2. Login \n 3. Admin \n 4. Exit")
+    print("\n====== Main Menu ======\n 1. New account \n 2. Login \n 3. Admin \n 4. Exit")
     
     try:
         choice = int(input("\nChoice: "))
     except ValueError:
-        print("Please enter a valid number.\n")
+        print("Please enter a valid number.")
         continue
 
     if choice == 1:
@@ -32,5 +32,5 @@ while choice != 4:
     elif choice == 4:
         print("Goodbye!")
     else:
-        print("Please enter a valid choice\n")
+        print("Please enter a valid choice.")
         continue
