@@ -31,10 +31,3 @@ class Main_menu():
           elif decision == 6:
               print("=====Exit=====")
       
- 
-            
-                
-                
-            
-                
-  

@@ -1,4 +1,5 @@
 from Parent_file import CSVFileReaderWriter as CSV
+from Main_menu import Main_menu
 import csv
 
 class login(CSV):
@@ -20,5 +21,10 @@ class login(CSV):
         
         if login_success:
             print("\nLogin successful!\n")
+
+            menu = Main_menu(login_user)
+            menu.show_menu()
+
+
         else:
             print("\nInvalid credentials!\n")
