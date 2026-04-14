@@ -5,17 +5,18 @@ class Main_menu():
     def show_menu(self):
       decision = 0
       
-      while decision != 5:
-          print("\n=====Main Menu=====\n")
+      while decision != 6:
+          print("|------------------------------------|")
+          print("|              User Menu             |")
+          print("|------------------------------------|")
           print("1. Refresh list")
           print("2. Sort list")
           print("3. Create Item")
-          print("4. Update Item Info")
-          print("5. Exit\n")
+          print("4. Update Item")
+          print("5. Archive/delete Item")
+          print("6. Exit to Main Menu\n")
           
-          
-          
-          decision = int(input("Enter a number\n"))
+          decision = int(input("Enter a number: "))
           
           if decision == 1:
               print("=====Refresh list=====")
@@ -26,5 +27,8 @@ class Main_menu():
           elif decision == 4:
               print("=====Update Item Info")
           elif decision == 5:
-              print("=====Exit=====")
+              print("=====Archive\Delete Item=====")
+          elif decision == 6:
+              print("Exiting to Main Menu...")
+              return
       
