@@ -24,7 +24,7 @@ class Admin(Adminfile):
         
         if not os.path.exists(self.filename):
             print("Admin file not found!")
-            return
+            return False
 
         login_success = False
         with open(self.filename, "r") as admin_file:
@@ -38,5 +38,7 @@ class Admin(Adminfile):
             
         if login_success:
             print("Login successful!")
+            return True
         else:
             print("Wrong username, password, or auth code!")
+            return False
