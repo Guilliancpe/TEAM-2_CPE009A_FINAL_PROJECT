@@ -5,7 +5,7 @@ class Main_menu():
     def show_menu(self):
       decision = 0
       
-      while decision != 6:
+      while decision != 5:
           print("\n=====Main Menu=====\n")
           print("1. Refresh list")
           print("2. Sort list")
