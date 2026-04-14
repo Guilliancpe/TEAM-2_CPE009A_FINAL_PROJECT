@@ -10,9 +10,8 @@ class Main_menu():
           print("1. Refresh list")
           print("2. Sort list")
           print("3. Create Item")
-          print("4. Update Item")
-          print("5. Archive/delete Item")
-          print("6. Exit\n")
+          print("4. Update Item Info")
+          print("5. Exit\n")
           
           
           
@@ -27,7 +26,5 @@ class Main_menu():
           elif decision == 4:
               print("=====Update Item Info")
           elif decision == 5:
-              print("=====Archive\Delete Item=====")
-          elif decision == 6:
               print("=====Exit=====")
       

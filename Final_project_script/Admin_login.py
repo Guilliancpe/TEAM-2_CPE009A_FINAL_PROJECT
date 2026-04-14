@@ -38,7 +38,9 @@ class Admin(Adminfile):
             
         if login_success:
             print("Login successful!")
+            menu = Admin_menu(admin_user)
+            menu.show_menu()
             return True
         else:
-            print("Wrong username, password, or auth code!")
-            return False
+         print("Wrong username, password, or auth code!")
+         return False
