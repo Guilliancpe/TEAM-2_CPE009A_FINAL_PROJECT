@@ -7,21 +7,27 @@ class Refresh_file:
 
     def refresh_list(self):
         if not os.path.exists(self.filename) or os.path.getsize(self.filename) == 0:
-            with open(self.filename, "w", newline="") as my_file:
-                write = csv.writer(my_file)
-                write.writerow(["Name", "components", "composition", "condition", "net_weight", "hazard", "recycle_rating"])
+            print("No items found.")
+            print("\nReturning to User Menu...")
+            return
 
         with open(self.filename, "r", newline="") as my_file:
             read = csv.reader(my_file)
             rows = list(read)
 
-        print("=====Refresh list=====")
+        print("                            ===== Refresh list =====                                ")
+        print("------------------------------------------------------------------------------------")
+        print("Name - Components - Composition - Condition - Net Weight - Hazard - Recycle Rating")
+        print("------------------------------------------------------------------------------------")
 
         if len(rows) <= 1:
             print("No items found.")
         else:
+            count = 1
             for row in rows[1:]:
-                print(" | ".join(row))
+                if row and row != rows[0]:
+                    print(f"{count}. {row[0]} - {row[1]} - {row[2]} - {row[3]} - {row[4]} - {row[5]} - {row[6]}")
+                    count += 1
 
         print("\nReturning to User Menu...")
 
