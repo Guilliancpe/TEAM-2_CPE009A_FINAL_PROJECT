@@ -16,7 +16,9 @@ class Refresh_file:
             rows = list(read)
 
         print("                            ===== Refresh list =====                                ")
-        print("------------------------------------------------------------------------------------")
+        print("=" * 85)
+        print("                                E-waste Registry                                    ")
+        print("=" * 85)
         print("Name - Components - Composition - Condition - Net Weight - Hazard - Recycle Rating")
         print("------------------------------------------------------------------------------------")
 
