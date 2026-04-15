@@ -15,12 +15,12 @@ class Refresh_file:
             read = csv.reader(my_file)
             rows = list(read)
 
-        print("                            ===== Refresh list =====                                ")
-        print("=" * 85)
-        print("                                E-waste Registry                                    ")
-        print("=" * 85)
-        print("Name - Components - Composition - Condition - Net Weight - Hazard - Recycle Rating")
-        print("------------------------------------------------------------------------------------")
+        print(" " * 30, "===== Refresh list =====", " " * 30)
+        print("-" * 86)
+        print("|", " " * 31, " E-waste Registry", " " * 32, "|")
+        print("-" * 86)
+        print("| Name | Components | Composition | Condition | Net Weight | Hazard | Recycle Rating |")
+        print("-" * 86)
 
         if len(rows) <= 1:
             print("No items found.")
@@ -28,7 +28,7 @@ class Refresh_file:
             count = 1
             for row in rows[1:]:
                 if row and row != rows[0]:
-                    print(f"{count}. {row[0]} - {row[1]} - {row[2]} - {row[3]} - {row[4]} - {row[5]} - {row[6]}")
+                    print(f"| {count}. | {row[0]} | {row[1]} | {row[2]} | {row[3]} | {row[4]} | {row[5]} | {row[6]} |")
                     count += 1
 
         print("\nReturning to User Menu...")
