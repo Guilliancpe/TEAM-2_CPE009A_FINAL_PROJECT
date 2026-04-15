@@ -2,7 +2,7 @@ from Admin_menu import Admin_menu
 import csv
 import hashlib
 import os
-from Admin_menu import Admin_menu
+
 
 class Adminfile():
     def __init__(self, filename="admin.csv"):

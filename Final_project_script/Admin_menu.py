@@ -12,8 +12,6 @@ class Admin_menu():
           print("3. E-waste Trackings")
           print("4. Exit\n")
           
-          
-          
           choice = int(input("Enter a number\n"))
           
           if choice == 1:

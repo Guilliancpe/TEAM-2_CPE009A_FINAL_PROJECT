@@ -1,3 +1,6 @@
+from Create_item import Create_item
+
+Create_Item_obj = Create_item()
 class Main_menu():
     def __init__ (self, user):
         self.user = user
@@ -5,7 +8,7 @@ class Main_menu():
     def show_menu(self):
       decision = 0
       
-      while decision != 6:
+      while decision != 5:
           print("|------------------------------------|")
           print("|              User Menu             |")
           print("|------------------------------------|")
@@ -13,8 +16,7 @@ class Main_menu():
           print("2. Sort list")
           print("3. Create Item")
           print("4. Update Item")
-          print("5. Archive/delete Item")
-          print("6. Exit to Main Menu\n")
+          print("5. Exit to Main Menu\n")
           
           decision = int(input("Enter a number: "))
           
@@ -23,12 +25,11 @@ class Main_menu():
           elif decision == 2:
               print("=====Sort list=====")
           elif decision == 3:
-              print("=====Create Item=====")
+              print("=====Create Item=====") 
+              Create_Item_obj.create_item()
           elif decision == 4:
               print("=====Update Item Info")
           elif decision == 5:
-              print("=====Archive\Delete Item=====")
-          elif decision == 6:
               print("Exiting to Main Menu...")
               return
       
