@@ -1,0 +1,113 @@
+import hashlib
+import pandas as pd
+import matplotlib.pyplot as plt
+from abc import ABC, abstractmethod
+from datetime import datetime
+from rich.console import Console
+
+console = Console()
+
+def hash_password(password):
+    """Generates an SHA256 hash for storing passwords. """
+    return hashlib.sha256(password.encode()).hexdigest()
+
+class Account(ABC):
+    def __init__(self, username, password):
+        self._username = username
+        self._password = hash_password(password) 
+
+    def check_password(self, password):
+        return self._password == hash_password(password)
+
+    @abstractmethod
+    def role(self):
+        pass
+
+class EwasteInventory:
+    def __init__(self):
+        self.filename = "ewaste_data.csv"
+        try:
+            self.df = pd.read_csv(self.filename)
+        except FileNotFoundError:
+            
+            self.df = pd.DataFrame(columns=[
+                'Name', 'Components', 'Composition', 'Condition', 
+                'Net Weight', 'Hazard', 'Recycle Rating', 'Date'
+            ])
+
+    def sort_and_visualize(self):
+        if self.df.empty:
+            print("The list is empty.")
+            return
+
+        print("\nSort by: 1. Name, 2. Condition, 3. Weight, 4. Rating")
+        sort_choice = input("Choose criteria: ")
+        
+        sort_map = {"1": "Name", "2": "Condition", "3": "Net Weight", "4": "Recycle Rating"}
+        column = sort_map.get(sort_choice, "Name")
+        
+        self.df = self.df.sort_values(by=column)
+        print(self.df)
+
+        
+        print("\n--- Display Graph ---")
+        print("1. Horizontal Bar (Frequency)\n2. Line Graph (Trends)\n3. Pie Chart (Composition)")
+        g_choice = input("Choose graph type: ")
+        
+        plt.style.use('dark_background') 
+        if g_choice == "1":
+            self.df['Condition'].value_counts().plot(kind='barh', color='#4b6eaf') 
+            plt.title("Item Condition Frequency")
+        elif g_choice == "2":
+            self.df.groupby('Date').size().plot(kind='line', marker='o', color='#4b6eaf')
+            plt.title("E-waste Logging Trends")
+        elif g_choice == "3":
+            self.df['Composition'].value_counts().plot(kind='pie', autopct='%1.1f%%')
+            plt.title("E-waste Composition")
+        plt.show()
+
+class Create_account:
+    def createacc(self):
+        print("===== New Account Created =====")
+
+class Login:
+    def user_login(self, inventory_obj):
+        print("Login Successful!")
+        
+        inventory_obj.sort_and_visualize()
+
+class Admin:
+    def newfile(self, u, p, code): pass
+    def admin_login(self, inventory_obj):
+        auth = input("Enter authentication code: ")
+        if auth == "123456": 
+            print("Admin Access Granted!")
+            inventory_obj.sort_and_visualize()
+                
+create_obj = Create_account()
+login_obj = Login()
+admin_obj = Admin()
+inventory_obj = EwasteInventory()
+
+admin_obj.newfile("Admin", "TIPadmin2026", "123456")
+
+choice = 0
+print("|-----------------------------------------------------|")
+print("| Welcome to the E-waste Management & Tracking System |")
+print("|-----------------------------------------------------|")
+
+while choice != 4:
+    print("\n====== Main Menu ======\n 1. New account \n 2. Login \n 3. Admin \n 4. Exit")
+    try:
+        choice = int(input("\nChoice: "))
+    except ValueError:
+        continue
+
+    if choice == 1:
+        create_obj.createacc()
+    elif choice == 2:
+        login_obj.user_login(inventory_obj)
+    elif choice == 3:
+        admin_obj.admin_login(inventory_obj)
+    elif choice == 4:
+        print("Goodbye!")
