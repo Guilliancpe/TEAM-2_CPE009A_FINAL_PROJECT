@@ -1,8 +1,10 @@
 from refresh_list import Refresh_file
 from Create_item import Create_item
+from Update_item import Update_item
 
 Refresh_obj = Refresh_file()
 Create_Item_obj = Create_item()
+Update_obj = Update_item()
 
 class Main_menu():
     def __init__(self, user):
@@ -32,6 +34,8 @@ class Main_menu():
                 Create_Item_obj.create_item()
             elif decision == 4:
                 print("=====Update Item Info=====")
+                Update_obj.update_item()
             elif decision == 5:
                 print("Exiting to Main Menu...")
                 return
+

@@ -2,7 +2,7 @@ import csv
 from Parent_file import CSVFileReaderWriter as CSV
 
 
-class UpdateItem(CSV):
+class Update_Item(CSV):
     def __init__(self, filename="E-waste.csv"):
         self.filename = filename
 
