@@ -1,10 +1,10 @@
 from refresh_list import Refresh_file
 from Create_item import Create_item
-from Update_item import Update_item
+from Update_item import Update_Item
 
 Refresh_obj = Refresh_file()
 Create_Item_obj = Create_item()
-Update_obj = Update_item()
+Update_obj = Update_Item()
 
 class Main_menu():
     def __init__(self, user):
