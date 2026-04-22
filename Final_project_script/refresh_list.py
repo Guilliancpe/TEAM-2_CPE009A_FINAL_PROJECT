@@ -44,10 +44,8 @@ class Refresh_file:
         count = 1
         for row in rows[1:]:
             if row and len(row) >= 7:
-                table.add_row(
-                    f"{count}.", row[0], row[1], row[2], 
-                    row[3], row[4], row[5], row[6]
-                )
+                table.add_row(f"{count}.", row[0], row[1], row[2], 
+                    row[3], row[4], row[5], row[6])
                 count += 1
 
         self.console.print(table)
