@@ -2,13 +2,12 @@ from refresh_list import Refresh_file
 from Create_item import Create_item
 from Update_item import Update_Item
 
-Refresh_obj = Refresh_file()
-Create_Item_obj = Create_item()
-Update_obj = Update_Item()
-
 class Main_menu():
     def __init__(self, user):
         self.user = user
+        self.Refresh_obj = Refresh_file()
+        self.Create_Item_obj = Create_item()
+        self.Update_obj = Update_Item()
         
     def show_menu(self):
         decision = 0
@@ -26,16 +25,15 @@ class Main_menu():
             decision = int(input("Enter a number: "))
             
             if decision == 1:
-                Refresh_obj.refresh_list()
+                self.Refresh_obj.refresh_list()
             elif decision == 2:
                 print("=====Sort list=====")
             elif decision == 3:
                 print("=====Create Item=====")
-                Create_Item_obj.create_item()
+                self.Create_Item_obj.create_item()
             elif decision == 4:
                 print("=====Update Item Info=====")
-                Update_obj.update_item()
+                self.Update_obj.update_item()
             elif decision == 5:
                 print("Exiting to Main Menu...")
                 return
-
