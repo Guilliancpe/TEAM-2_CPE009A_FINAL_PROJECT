@@ -1,6 +1,13 @@
 from E_waste_graphs import E_graph, e_file
+from Del_Item import E_admin
+
+
+
 
 Es_obj = E_graph(e_file("E-waste.csv"))
+
+efile = e_file("E-waste.csv")
+Ea_obj = E_admin(efile)
 
 class Admin_menu():
     def __init__ (self, admin):
@@ -9,22 +16,26 @@ class Admin_menu():
     def show_menu(self):
       choice = 0
       
-      while choice != 4:
+      while choice != 3:
           print("\n=====Admin Menu=====\n")
-          print("1. Archive/delete Item")
+          print("1. Delete Item")
           print("2. E-waste Statistics")
-          Es_obj.load_graph("composition")
-          print("3. E-waste Trackings")
-          print("4. Exit\n")
+          print("3. Exit\n")
           
           choice = int(input("Enter a number\n"))
           
           if choice == 1:
-              print("=====Refresh list=====")
+              print("=====Delete Item=====")
+              choice = input("Enter choice: ")
+
+              if choice == "1":
+                column = input("Enter column to match (e.g. Name, composition, recycle_rating): ")
+                value = input(f"Enter the {column} value to delete: ")
+                Ea_obj.delete_item(column, value)
+                Ea_obj.delete_item("Name", "Value")
           elif choice== 2:
               print("=====E-waste Statistic=====")
+              Es_obj.load_graph("composition")
           elif choice == 3:
-              print("=====E-waste Tracking=====") 
-          elif choice == 4:
               print("=====Exit=====")
       

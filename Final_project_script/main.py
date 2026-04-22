@@ -6,6 +6,8 @@ create_obj = Create_account()
 login_obj = login()
 admin_obj = Admin()
 
+
+
 admin_obj.newfile("Admin", "TIPadmin2026", "123456")
 
 choice = 0

@@ -9,6 +9,9 @@ class e_file:
         data = pd.read_csv(self.filename)
         return data
     
+    def save_csv(self, data):
+        data.to_csv(self.filename, index=False)
+    
 class E_graph(e_file):
     def __init__(self, filename: e_file):
         self.filename = filename
@@ -23,7 +26,6 @@ class E_graph(e_file):
 
         plt.pie(counts.values, labels=counts.index, autopct='%1.1f%%')
         plt.title(f"E-Waste {Name} Distribution")
-        plt.legend(counts.index, title=Name, loc="best")
         plt.savefig("ewaste_graph.png")
        
        
