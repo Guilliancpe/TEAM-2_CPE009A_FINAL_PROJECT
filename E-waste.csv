@@ -1,0 +1,9 @@
+
+Name,components,composition,condition,net_weight,hazard,recycle_rating
+Android1,Glass,Glass,okay,1,none,0
+Name,components,composition,condition,net_weight,hazard,recycle_rating
+Android2,Glass,Glass,Okay,1,none,0
+Name,components,composition,condition,net_weight,hazard,recycle_rating
+Android3,None,Steel,1,1,1,1
+Name,components,composition,condition,net_weight,hazard,recycle_rating
+Android4,none,Plastic,1,1,1,1
