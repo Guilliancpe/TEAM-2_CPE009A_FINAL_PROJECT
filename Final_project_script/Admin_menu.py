@@ -14,8 +14,7 @@ class Admin_menu():
           print("1. Archive/delete Item")
           print("2. E-waste Statistics")
           Es_obj.load_graph("composition")
-          print("3. E-waste Trackings")
-          print("4. Exit\n")
+          print("3. Exit\n")
           
           choice = int(input("Enter a number\n"))
           
@@ -24,7 +23,5 @@ class Admin_menu():
           elif choice== 2:
               print("=====E-waste Statistic=====")
           elif choice == 3:
-              print("=====E-waste Tracking=====") 
-          elif choice == 4:
               print("=====Exit=====")
       
