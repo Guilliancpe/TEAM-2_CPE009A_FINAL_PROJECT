@@ -26,7 +26,7 @@ class Admin_menu():
           
           if choice == 1:
               print("=====Delete Item=====")
-              choice = input("Enter choice: ")
+              choice = input("Press 1 to enter: ")
 
               if choice == "1":
                 column = input("Enter column to match (e.g. Name, composition, recycle_rating): ")
